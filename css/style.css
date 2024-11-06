@@ -22,6 +22,8 @@ ol {
 
 img {
 	max-width: 100%;
+    aspect-ratio: 1 / 1;
+    margin: auto;
 }
 
 /* HEADER  */
@@ -37,4 +39,50 @@ header {
 
 body {
     background-image: url(/img/cork.png);
+}
+
+/* MAIN  */
+
+.container {
+    max-width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.col-33 {
+    /* width: 33%; */
+    margin: auto;
+    padding: 15px;
+}
+
+/* CARD  */
+
+.col-33 {
+    background-color: white;
+}
+
+img {
+    width: 270px;
+}
+
+.card_container {
+    width: 270px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+/* DEBUG  */
+
+.debug {
+    border: 3px solid black;
 }
