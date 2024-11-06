@@ -47,6 +47,7 @@ body {
     max-width: 80%;
     margin: auto;
     margin-top: 50px;
+    margin-bottom: 15px;
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
@@ -62,6 +63,7 @@ body {
 
 .col-33 {
     background-color: white;
+    /* width: 33%; */
 }
 
 img {
@@ -73,6 +75,13 @@ img {
     margin: 0 auto;
 }
 
+.pin {
+    width: 25px;
+    position: relative;
+    margin: auto;
+    z-index: 1;
+    top: 20px;
+}
 
 
 
