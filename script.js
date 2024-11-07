@@ -59,3 +59,14 @@ function appendCards(cards, root) {
         root.innerHTML += photoCardHTML
     })
 }
+
+// AGGIUNGO L'EVENTO SUL TASTO PER CHIUDERE L'IMMAGINE CHE E' STATA APERTA
+
+const overlayEl = document.getElementById ('overlaySection')
+const closeButton = document.getElementById ('btn')
+
+
+closeButton.addEventListener('click', () => {
+    console.log('ciao')
+    overlayEl.style.display = 'none'
+})

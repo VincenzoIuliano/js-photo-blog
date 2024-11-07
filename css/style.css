@@ -47,7 +47,7 @@ body {
     max-width: 80%;
     margin: auto;
     margin-top: 50px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
@@ -55,16 +55,12 @@ body {
 
 .col-33 {
     /* width: 33%; */
-    margin: auto;
+    margin: 0 auto;
     padding: 15px;
+    background-color: white;
 }
 
 /* CARD  */
-
-.col-33 {
-    background-color: white;
-    /* width: 33%; */
-}
 
 img {
     width: 270px;
@@ -83,15 +79,30 @@ img {
     top: 20px;
 }
 
+/* OVERLAY  */
 
+.overlay {
+    /* BACKGROUND TRASPARENTE E DIMENSIONE MASSIMA  */
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vmax;
+    width: 100vmax;
+    /* DISPLAY FLEX E ALLINEO GLI ELEMENTI  */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    /* POSZIONO DOVE MI SERVE */
+    position: fixed;
+    z-index: 2;
+}
 
+.viewport_img {
+   width: 100%;
+}
 
-
-
-
-
-/* DEBUG  */
-
-.debug {
-    border: 3px solid black;
+.close_btn {
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 10%;
 }
