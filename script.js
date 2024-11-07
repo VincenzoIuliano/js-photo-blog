@@ -46,8 +46,8 @@ function appendCards(cards, root) {
                     <figure class="pin">
                         <img src="./img/pin.svg" alt="">
                     </figure>
-                    <figure>
-                        <img src="${url}" alt="">
+                    <figure class="image_clickable">
+                        <img src="${url}" alt="" onclick="openPopup()">
                     </figure>
                     <div class="card_description">
                         <span>${title}</span>
@@ -70,3 +70,9 @@ closeButton.addEventListener('click', () => {
     console.log('ciao')
     overlayEl.style.display = 'none'
 })
+
+// CREO UNA FUNZIONE ONCLICK CHE MI FA COMPARIRE IL POPUP
+
+function openPopup () {
+    overlayEl.style.display = ''
+}
