@@ -47,7 +47,7 @@ function appendCards(cards, root) {
                         <img src="./img/pin.svg" alt="">
                     </figure>
                     <figure class="image_clickable">
-                        <img src="${url}" alt="" onclick="openPopup()">
+                        <img class="image_changeable" src="${url}" alt="">
                     </figure>
                     <div class="card_description">
                         <span>${title}</span>
@@ -58,6 +58,22 @@ function appendCards(cards, root) {
 
         root.innerHTML += photoCardHTML
     })
+
+    const cardsEl = document.querySelectorAll('div.card_container')
+    // const cardImage = document.querySelectorAll('img.image_changeable')
+    const viewportImg = document.getElementById('viewport_img_active')
+
+    // console.log(cardImage[1].src)
+    // console.log(cardsEl);
+    // console.log(viewportImg.src);
+    
+    for (let i = 0; i < cardsEl.length; i++) {
+        cardsEl[i].addEventListener('click', () => {
+            overlayEl.style.display = ''
+            viewportImg.src = cards[i].url
+        })
+        
+    }
 }
 
 // AGGIUNGO L'EVENTO SUL TASTO PER CHIUDERE L'IMMAGINE CHE E' STATA APERTA
@@ -67,12 +83,12 @@ const closeButton = document.getElementById ('btn')
 
 
 closeButton.addEventListener('click', () => {
-    console.log('ciao')
     overlayEl.style.display = 'none'
 })
 
 // CREO UNA FUNZIONE ONCLICK CHE MI FA COMPARIRE IL POPUP
 
-function openPopup () {
-    overlayEl.style.display = ''
-}
+// function openPopup () {
+//     overlayEl.style.display = ''
+// }
+
