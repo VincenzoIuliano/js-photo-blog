@@ -60,35 +60,37 @@ function appendCards(cards, root) {
     })
 
     const cardsEl = document.querySelectorAll('div.card_container')
-    // const cardImage = document.querySelectorAll('img.image_changeable')
     const viewportImg = document.getElementById('viewport_img_active')
-
-    // console.log(cardImage[1].src)
-    // console.log(cardsEl);
-    // console.log(viewportImg.src);
     
     for (let i = 0; i < cardsEl.length; i++) {
         cardsEl[i].addEventListener('click', () => {
-            overlayEl.style.display = ''
-            viewportImg.src = cards[i].url
+            // overlayEl.classList.toggle('no_display')
+            toggleOverlay()
+            viewportImg.src = cards[i].url 
         })
-        
     }
 }
 
 // AGGIUNGO L'EVENTO SUL TASTO PER CHIUDERE L'IMMAGINE CHE E' STATA APERTA
 
 const overlayEl = document.getElementById ('overlaySection')
-const closeButton = document.getElementById ('btn')
+// const closeButton = document.getElementById ('btn')
 
 
-closeButton.addEventListener('click', () => {
-    overlayEl.style.display = 'none'
+// closeButton.addEventListener('click', () => {
+//     overlayEl.classList.toggle('no_display')
+// })
+
+// AGGIUNGO FUNZIONE PER POTER CHIUDERE IL MIO OVERLAY ANCHE SE NON CLICCO IL TASTO COME VISTO IN CLASSE
+
+function toggleOverlay () {
+    overlayEl.classList.toggle('no_display')
+    document.body.classList.toggle('overflow-hidden')
+    
+}
+
+overlayEl.addEventListener ('click',(event) => {
+    if (event.target.tagName !== 'IMG') {
+        toggleOverlay()     
+    }
 })
-
-// CREO UNA FUNZIONE ONCLICK CHE MI FA COMPARIRE IL POPUP
-
-// function openPopup () {
-//     overlayEl.style.display = ''
-// }
-
